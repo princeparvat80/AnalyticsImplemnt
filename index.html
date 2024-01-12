@@ -1,0 +1,74 @@
+<!-- index.html (Homepage) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Home</title>
+    <!-- Add your JavaScript file or include inline script here -->
+    <!-- <script src="main.js" defer></script> -->
+    <script>
+      console.log("check test");
+    </script>
+  </head>
+  <body>
+    <script
+      language="JavaScript"
+      type="text/JavaScript"
+      src="AppMeasurement.js"
+    >
+      console.log("AppMeasurement.js")
+    </script>
+    ------------------------------------------------------------------------------------------------------------------------------
+    <script language="JavaScript" type="text/JavaScript">
+      console.log("here we can send data to adobe anlaytics")
+      // Create a new Date object representing the current date and time
+        var today = new Date();
+        console.log(today);
+        var year = today.getFullYear();
+        var month = today.getMonth() + 1;
+        var day = today.getDate();
+        var formattedDate = year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+
+        console.log(formattedDate);
+
+        //here we can send data to adobe anlaytics
+        s.pageName = "Base Home Page of Learning Craft"
+        s.pageURL = "homepage_pplearningcraft.com"
+        s.prop2 = formattedDate + " Prop hit";
+        s.eVar1 = formattedDate + " Evar hit"
+        s.eVar2 = ""
+        s.eVar3 = "I have sent Empty string in evar2 in this hit"
+
+        //This is the main Line it will decide if the serevr call get fired or not.
+      //   var s_code = s.t(); //This is Page view call and will fire if the page loads
+      //   if(s_code)document.write(s_code)
+
+        var s_code=s.tl(this,'0','Childrent dat App Fi');//This is Link call and will fire if any link will ne clicked on the page
+        if(s_code)document.write(s_code)
+    </script>
+    ------------------------------------------------------------------------------------------------------------------------------
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <!-- Your homepage content goes here -->
+      <h1>Welcome to our website!</h1>
+      <p>This is the homepage content.</p>
+      <img src="https://picsum.photos/800/400" alt="Open Source Image" />
+      <p>Explore more:</p>
+      <ul>
+        <li><a href="product.html">Our Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <!-- You can also include inline script here if needed -->
+  </body>
+</html>
